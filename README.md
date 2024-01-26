@@ -49,3 +49,6 @@ int main() {
     return 0;
 }
 ```
+
+## Authors
+This repository was created by [Zoé Michel](https://github.com/Zoemchl) and [Auriane Le Perdriel](https://github.com/aleperdriel)

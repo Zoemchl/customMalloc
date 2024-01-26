@@ -74,7 +74,7 @@ void* custom_malloc(size_t size) {
         }
 
         free_block = allocate_block(last_block, size) + sizeof(mem_block_t);
-        printf("%p\n", free_block);
+        // printf("%p\n", free_block);
     } else {
         free_block->is_free = 0;
         free_block->size = size;
@@ -88,12 +88,11 @@ void custom_free(void* ptr) {
         printf("Nothing to free !\n");
         return;
     }
-    printf("%p\n", (mem_block_t*)ptr);
     // Moves backward the pointer by the size of a mem_block
     mem_block_t* block = (mem_block_t*)ptr - 1;
 
-    printf("Freed space! of %zu bytes\n", block->size);
-    printf("Mem_block at the address %p\n", block);
+    // printf("Freed space! of %zu bytes\n", block->size);
+    // printf("Mem_block at the address %p\n", block);
 
     block->is_free = 1;
     // TODO : handle when next block is free too (unite the two blocks into one new bigger one)
@@ -128,6 +127,16 @@ void* custom_realloc(void* ptr, size_t size) {
 
 }
 
+void* custom_calloc(size_t num_elements, size_t element_size) {
+    size_t size = num_elements * element_size;
+    void* ptr = custom_malloc(size);
+
+    if (ptr != NULL) {
+        memset(ptr, 0, size);
+    }
+
+    return ptr;
+}
 
 // Print all of the existing memory_blocks (for debug mainly)
 void print_memory_blocks() {

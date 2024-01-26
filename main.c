@@ -58,17 +58,14 @@ void *custom_malloc(size_t size) {
     }
 }
 
-void free(void *ptr) {
+void custom_free(void *ptr) {
 
 }
 
-void *realloc(void *ptr, size_t size) {
+void *custom_realloc(void *ptr, size_t size) {
 
 }
 
-void *realloc(void *ptr, size_t size) {
-
-}
 
 int main() {
     int size_block = 1024;

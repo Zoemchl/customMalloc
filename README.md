@@ -7,7 +7,6 @@ To run this code, you will need a C compiler, we will use [GCC](). It is usually
 sudo apt-get install gcc 
 ```
 
-
 ## Quick start
 ### Compile the code on Linux
 In the root folder, run the following command:
@@ -21,3 +20,10 @@ Then simply run:
 ./main
 ```
 <!-- Add test files to run and instructions to use the function wherever we need -->
+
+## Functions wiki
+
+`void *malloc(size_t size)`<br>Allocates memory on the heap of the given size in bytes<br>
+`void free(void *ptr)`<br>
+`void *calloc(size_t nmemb, size_t size)`<br>
+`void *realloc(void *ptr, size_t size)`<br>
